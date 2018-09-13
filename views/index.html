@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>EnergyComp - Status</title>
+
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <link href="/static/css/c3.min.css" rel="stylesheet">
+  <style>
+    .breathe {
+      padding-bottom: 40px;
+    }
+
+    .usage-text {
+      background: #222;
+    }
+
+    .goal {
+      font-size: 1.2em;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="#">EnergyComp</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/heatmap">Appliance Heatmap</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="breathe"></div>
+  <section class="container" id="hero">
+    <div class="jumbotron">
+      <h1>Hello, John Doe</h1>
+      <p class="lead">
+        Based on your recent usage data you could make savings by upgrading your appliances to be more energy efficient.
+      </p>
+      <!-- This isn't really neccesary but could lead to a modal explaining how they can save more -->
+      <button class="btn btn-primary btn-lg" id="learnMore">Learn More</button>
+    </div>
+  </section>
+  <div class="breathe"></div>
+  <section class="container" id="goals">
+    <h2>Overview</h2>
+    <hr>
+    <div class="row">
+      <div class="col-md-4">
+        <h4>Consumption per Appliance</h4>
+        <div id="piechart"></div>
+      </div>
+      <div class="col-md-4">
+        <h4>Most Consumptive Appliance</h4>
+        <p class="lead"><strong>Garage fridge</strong></p>
+        <p style="font-size: 1.1 rem">This appliance has been using 240 kWh of energy per month, which is 54% more than the
+          average monthly usage of an 180 watt fridge. Please review our suggestions to you (click 'Learn More').</p>
+      </div>
+      <div class="col-md-4">
+        <h4>Energy Usage/Wastage</h4>
+        <div id="gauge"></div>
+      </div>
+    </div>
+  </section>
+  <div class="breathe"></div>
+  <section class="container" id="appliances">
+    <h2>Appliance Consumption</h2>
+    <hr>
+    <div class="breathe"></div>
+    <div class="row">
+      <div class="col-md-12">
+        <div id="appliance-consumption"></div>
+      </div>
+    </div>
+    <div class="breathe"></div>
+
+  </section>
+  <section class="container">
+    <h2>Wastage and Usage</h2>
+    <hr>
+    <div class="breathe"></div>
+    <div class="row">
+      <div class="col-md-12">
+        <button class="btn-primary btn btn-lg" id="toggle">Toggle</button>
+        <div class="breathe"></div>
+      </div>
+
+      <div class="col-md-12">
+        <div id="usage-graph">
+          <h4 class="text-center" id="usageWastageTitle">Usage</h4>
+          <div id="usage"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="container">
+    <div class="breathe"></div>
+    <div class="breathe"></div>
+    <h2 id="improvements">How you can improve</h2>
+    <hr>
+    <div class="row">
+      <div class="col-md-6">
+        <h3>Turn off appliances and other electricity sources when not in use</h3>
+        <p class="lead">Leaving your lights, heater, etc. on when you are not using them (such as leaving your heater on
+          while you are at work) can consume fairly substantial amounts of unnecessary energy. It is recommended that you
+          always make sure you turn appliances off when you are finished using them.</p>
+      </div>
+      <div class="col-md-6">
+        <h3>Reduce your overall usage of these appliances</h3>
+        <p class="lead">We have noticed that these appliances are powered on for longer than the recommended average:
+          <ul>
+            <li style="font-size: 1.15rem">Heater</li>
+            <li style="font-size: 1.15rem">PS4</li>
+          </ul>
+        </p>
+        <p class="lead">By reducing your overall usage of these appliances, you could save as much as $ per month.</p>
+      </div>
+    </div>
+    <div class="breathe"></div>
+    <div class="row">
+      <div class="col-md-6">
+        <h3>Switch to a more environmentally friendly appliance</h3>
+        <p class="lead">One or more of your appliances is consuming more energy per month than the statistical average. We
+          recommend that you either reduce your usage of these appliances, or look into alternatives that do not consume
+          as much energy.
+          <ul>
+            <li style="font-size: 1.15rem">Garage fridge</li>
+          </ul>
+        </p>
+      </div>
+      <div class="col-md-6">
+        <h3>Consider your options</h3>
+        <p class="lead">Remember that these are all suggestions; you are not required to make these changes. However, it
+          is recommended that you keep these suggestions in mind. You may call us at 040-783-4834 if you wish to enquire
+          further about these suggestions.</p>
+      </div>
+    </div>
+  </section>
+  <div class="breathe"></div>
+  <div class="breathe"></div>
+  <div class="breathe"></div>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="/static/js/c3.min.js"></script>
+  <script src="/static/js/bar.js"></script>
+  <script src="/static/js/gauge.js"></script>
+  <script src="/static/js/piechart.js"></script>
+  <script src="/static/js/usage.js"></script>
+  <script src="/static/js/wastage.js"></script>
+  <script src="/static/js/main.js"></script>
+  <script src="/static/js/button.js"></script>
+</body>
+
+</html>

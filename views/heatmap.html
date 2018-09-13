@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>EnergyComp - Heatmap</title>
+
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <style>
+    .breathe {
+      padding-bottom: 40px;
+    }
+
+    .heatmap {
+      transition: 0.5s;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="#">EnergyComp</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/index">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Appliance Heatmap</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="breathe"></div>
+  <section class="container" id="hero">
+    <div class="jumbotron">
+      <h1>Appliance Heatmap</h1>
+      <p class="lead">
+        The following graph shows the energy usage in your household.
+      </p>
+    </div>
+  </section>
+  <div class="breathe"></div>
+  <section class="container" id="heatmap">
+    <section id="lights" class="heatmap">
+      <h2>Lights</h2>
+
+      <hr>
+      <fieldset>
+        <legend>Legend</legend>
+        <p>
+          <div style="display: inline-block; width:25px; margin-right: 10px;" class="bg-primary">&nbsp;</div>Low Usage
+        </p>
+        <p>
+          <div style="display: inline-block; width:25px; margin-right: 10px; background: orange;">&nbsp;</div>High Usage
+        </p>
+      </fieldset>
+      <img class="img-fluid" src="/static/imgs/lights-map.png">
+    </section>
+    <section id="appliances" class="heatmap">
+      <h2>Appliances</h2>
+      <hr>
+      <fieldset>
+        <legend>Legend</legend>
+        <p>
+          <div style="display: inline-block; width:25px; margin-right: 10px;" class="bg-primary">&nbsp;</div>Low Usage
+        </p>
+        <p>
+          <div style="display: inline-block; width:25px; margin-right: 10px; background: orange;">&nbsp;</div>High Usage
+        </p>
+      </fieldset>
+      <img class="img-fluid" src="/static/imgs/appliances-map.png">
+    </section>
+    <section id="gas" class="heatmap">
+      <h2>Gas</h2>
+      <hr>
+      <fieldset>
+        <legend>Legend</legend>
+        <p>
+          <div style="display: inline-block; width:25px; margin-right: 10px;" class="bg-primary">&nbsp;</div>Low Usage
+        </p>
+        <p>
+          <div style="display: inline-block; width:25px; margin-right: 10px; background: orange;">&nbsp;</div>High Usage
+        </p>
+      </fieldset>
+      <img class="img-fluid" src="/static/imgs/lights-map.png">
+    </section>
+    <div class="breathe"></div>
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a class="heatmap-selection nav-link active" href="#" data-target="lights">Lights</a>
+      </li>
+      <li class="nav-item">
+        <a class="heatmap-selection nav-link" href="#" data-target="appliances">Appliances</a>
+      </li>
+      <li class="nav-item">
+        <a class="heatmap-selection nav-link" href="#" data-target="gas">Gas</a>
+      </li>
+    </ul>
+  </section>
+  <div class="breathe"></div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.heatmap').hide();
+      $('#lights').show();
+
+      $('.heatmap-selection').click(function (e) {
+        e.preventDefault();
+        $('.heatmap').hide();
+        $('#' + $(this).data('target')).show();
+        $('.heatmap-selection').removeClass('active');
+        $(this).addClass('active');
+      });
+    });
+  </script>
+</body>
+
+</html>
