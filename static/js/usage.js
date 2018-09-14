@@ -39,16 +39,16 @@ const usageWastage = c3.generate({
 
 $("#toggle").click(function(){
   $("#usageWastageTitle").text((selection ? "Wastage" : "Usage"));
+  $(this).text((selection ? "Usage" : "Wastage"));
   usageWastage.load({
     columns: (selection ? wastage : usage),
     unload: true,
   });
   
   selection = !selection;
-  $(this).text((selection ? "Usage" : "Wastage"));
 });
 $(document).ready(function(){
-  $("#toggle").text("Usage");
+  $("#toggle").text("Wastage");
   usageWastage.load({
     columns: usage,
     unload: true,
