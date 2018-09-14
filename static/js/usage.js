@@ -14,7 +14,7 @@ const usageWastage = c3.generate({
     data: {
         type: 'spline',
         format: function(d) {
-          return `${d}kw`
+          return `${d}kw`;
         },
         columns: usage,
         colors: {
@@ -26,7 +26,14 @@ const usageWastage = c3.generate({
     x: {
       type: 'category',
       categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-    }
+    },
+    y: {
+      tick: {
+        format: function(d) {
+          return `${d}kw`;
+        },
+      }
+    }  
   }
 });
 
