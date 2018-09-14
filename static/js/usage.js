@@ -13,6 +13,9 @@ const usageWastage = c3.generate({
   bindto: '#usage',
     data: {
         type: 'spline',
+        format: function(d) {
+          return `${d}kw`
+        },
         columns: usage,
         colors: {
           'You': '#d6a726',
