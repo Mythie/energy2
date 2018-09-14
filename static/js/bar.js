@@ -9,12 +9,12 @@ var bar = c3.generate({
           'Wastage': '#4a69bd',
         },
         json: [
-                {name: 'Microwave', Usage: 200, Wastage: 200, total: 400},
+                {name: 'Microwave', Usage: 70, Wastage: 15, total: 85},
                 {name: 'Fridge', Usage: 240, Wastage: 0, total: 240},
-                {name: 'Heater', Usage: 300, Wastage: 200, total: 500},
-                {name: 'Computer', Usage: 400, Wastage: 100, total: 500},
-                {name: 'TV', Usage: 400, Wastage: 100, total: 500},
-                {name: 'PS4', Usage: 400, Wastage: 100, total: 500},
+                {name: 'Heater', Usage: 35, Wastage: 20, total: 55},
+                {name: 'Computer', Usage: 120, Wastage: 20, total: 140},
+                {name: 'TV', Usage: 150, Wastage: 40, total: 190},
+                {name: 'PS4', Usage: 150, Wastage: 60, total: 210},
             ],
 		keys: {
 			x: 'name',
