@@ -1,6 +1,9 @@
 var bar = c3.generate({
 	bindto: '#appliance-consumption',
     data: {
+        format: function(d) {
+          return `${d}kw`;
+        },
         colors: {
           'Usage': '#d6a726',
           'Wastage': '#4a69bd',
@@ -26,6 +29,13 @@ var bar = c3.generate({
 			x: {
 				type: 'category',
 			},
+     y: {
+      tick: {
+        format: function(d) {
+          return `${d}kw`;
+        },
+      },
+    } 
 		},
     grid: {
         y: {
