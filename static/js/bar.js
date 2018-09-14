@@ -10,7 +10,7 @@ var bar = c3.generate({
         },
         json: [
                 {name: 'Microwave', Usage: 200, Wastage: 200, total: 400},
-                {name: 'Fridge', Usage: 100, Wastage: 300, total: 400},
+                {name: 'Fridge', Usage: 240, Wastage: 0, total: 240},
                 {name: 'Heater', Usage: 300, Wastage: 200, total: 500},
                 {name: 'Computer', Usage: 400, Wastage: 100, total: 500},
                 {name: 'TV', Usage: 400, Wastage: 100, total: 500},
